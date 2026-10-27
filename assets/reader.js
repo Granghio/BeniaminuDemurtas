@@ -90,8 +90,9 @@ async function renderPage(pageNum) {
     var vp1 = page.getViewport({ scale: 1 });
     // The bitmap dimensions are rounded to integers. Containing that rounded
     // ratio adds a hairline of paper even when the original PDF fits the sheet.
-    // Fill only matching page proportions; mixed-size PDF pages keep letterboxing.
-    canvas.style.objectFit = Math.abs((vp1.width / vp1.height) / aspectRatio - 1) < 0.000001 ? 'fill' : 'contain';
+    // Exports of the same paper format can differ slightly in their PDF boxes.
+    // Fit these sheets edge to edge; retain letterboxing for other page formats.
+    canvas.style.objectFit = Math.abs((vp1.width / vp1.height) / aspectRatio - 1) < 0.002 ? 'fill' : 'contain';
     var scale = cssPageWidth > 0 ? (cssPageWidth * dpr) / vp1.width : dpr * 2;
     scale = Math.min(Math.max(scale, 1), 5);
     // Bound each bitmap and concurrency for mobile canvas/memory limits.
