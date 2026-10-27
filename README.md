@@ -29,7 +29,7 @@ Questa versione carica il PDF con HTTP/HTTPS. Per provarla sul computer, servi l
 - `index.html`: pagina iniziale.
 - `assets/style.css`: stile del lettore.
 - `assets/reader.js`: logica del lettore originale adattata alle risorse esterne.
-- `assets/book.pdf`: PDF originale, estratto senza modifiche.
+- `assets/book.pdf`: PDF del libro con la copertina posteriore aggiornata; le prime 33 pagine sono invariate.
 - `assets/background.jpg` e `assets/page-turn.mp3`: sfondo e suono originali.
 - `assets/vendor/`: copie di PDF.js, del suo worker e di PageFlip estratte dal file originale; le intestazioni di licenza presenti sono conservate.
 - `.nojekyll`: disabilita l'elaborazione Jekyll.
